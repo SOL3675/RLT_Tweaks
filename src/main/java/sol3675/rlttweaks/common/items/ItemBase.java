@@ -7,7 +7,7 @@ import sol3675.rlttweaks.references.ModInfo;
 public class ItemBase extends Item
 {
     public String name;
-    public String[] subNames;
+    protected String[] subNames;
 
     public ItemBase(String name, int stackSize, String... subNames)
     {
@@ -19,5 +19,9 @@ public class ItemBase extends Item
         this.subNames = subNames;
     }
 
+    public String[] getSubNames()
+    {
+        return subNames;
+    }
 
 }
