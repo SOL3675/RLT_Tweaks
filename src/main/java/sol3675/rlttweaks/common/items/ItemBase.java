@@ -6,6 +6,7 @@ import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.NonNullList;
+import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
@@ -20,7 +21,6 @@ public class ItemBase extends Item
 
     public ItemBase(String name, int stackSize, String... subNames)
     {
-        this.setRegistryName(ModInfo.MODID, name);
         this.setUnlocalizedName(ModInfo.MODID + "." + name);
         this.setHasSubtypes(subNames != null && subNames.length > 0);
         this.setCreativeTab(RLTTweaks.creativeTabs);
@@ -75,12 +75,12 @@ public class ItemBase extends Item
         {
             for(int i = 0; i < item.getSubNames().length; ++i)
             {
-                ModelLoader.setCustomModelResourceLocation(item, i, new ModelResourceLocation(ModInfo.MODID + ":" + item.getUnlocalizedName().substring(15), "inventory"));
+                ModelLoader.setCustomModelResourceLocation(item, i, new ModelResourceLocation(ModInfo.MODID + ":" + item.getUnlocalizedName().substring(5), "inventory"));
             }
         }
         else
         {
-            ModelLoader.setCustomModelResourceLocation(item, 0, new ModelResourceLocation(ModInfo.MODID + ":" + item.getUnlocalizedName().substring(15), "inventory"));
+            ModelLoader.setCustomModelResourceLocation(item, 0, new ModelResourceLocation(ModInfo.MODID + ":" + item.getUnlocalizedName().substring(5), "inventory"));
         }
     }
 

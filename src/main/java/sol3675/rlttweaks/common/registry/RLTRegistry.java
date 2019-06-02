@@ -4,6 +4,7 @@ import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
+import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.event.RegistryEvent;
@@ -49,7 +50,7 @@ public class RLTRegistry
     {
         for(Block block : registerdBlock)
         {
-            event.getRegistry().register(block);
+            event.getRegistry().register(block.setRegistryName(new ResourceLocation(ModInfo.MODID, block.getUnlocalizedName().substring(5))));
         }
     }
 
@@ -58,7 +59,7 @@ public class RLTRegistry
     {
         for(Item item : registerdItem)
         {
-            event.getRegistry().register(item);
+            event.getRegistry().register(item.setRegistryName(new ResourceLocation(ModInfo.MODID, item.getUnlocalizedName().substring(5))));
         }
     }
 
@@ -68,7 +69,7 @@ public class RLTRegistry
     {
         for(Block block : registerdBlock)
         {
-            ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0, new ModelResourceLocation(ModInfo.MODID + ":" + block.getUnlocalizedName().substring(15), "inventory"));
+            ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0, new ModelResourceLocation(ModInfo.MODID + ":" + block.getUnlocalizedName().substring(5), "inventory"));
         }
 
         for(Item item : registerdItem)

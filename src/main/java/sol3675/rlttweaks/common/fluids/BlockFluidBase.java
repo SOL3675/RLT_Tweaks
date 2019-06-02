@@ -12,7 +12,6 @@ public class BlockFluidBase extends BlockFluidClassic
     public BlockFluidBase(String name, Fluid fluid, Material material)
     {
         super(fluid, material);
-        this.setRegistryName(ModInfo.MODID, name);
         this.setUnlocalizedName(ModInfo.MODID + "." + name);
         this.setCreativeTab(RLTTweaks.creativeTabs);
 
