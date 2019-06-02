@@ -2,8 +2,10 @@ package sol3675.rlttweaks.common.registry;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
+import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
 import net.minecraftforge.client.event.ModelRegistryEvent;
+import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
@@ -12,6 +14,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import sol3675.rlttweaks.common.fluids.BlockFluidBase;
 import sol3675.rlttweaks.common.fluids.FluidBase;
 import sol3675.rlttweaks.common.items.ItemBase;
+import sol3675.rlttweaks.references.ModInfo;
 import sol3675.rlttweaks.references.Reference;
 
 import java.util.ArrayList;
@@ -63,6 +66,11 @@ public class RLTRegistry
     @SubscribeEvent
     public void registerModels(ModelRegistryEvent event)
     {
+        for(Block block : registerdBlock)
+        {
+            ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0, new ModelResourceLocation(ModInfo.MODID + ":" + block.getUnlocalizedName().substring(15), "inventory"));
+        }
+
         for(Item item : registerdItem)
         {
             ItemBase.registerItemRender((ItemBase) item);

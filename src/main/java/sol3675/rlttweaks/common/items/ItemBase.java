@@ -75,12 +75,12 @@ public class ItemBase extends Item
         {
             for(int i = 0; i < item.getSubNames().length; ++i)
             {
-                ModelLoader.setCustomModelResourceLocation(item, i, new ModelResourceLocation(ModInfo.MODID + ":" + item.getUnlocalizedName(new ItemStack(item, 1, i)), "inventory"));
+                ModelLoader.setCustomModelResourceLocation(item, i, new ModelResourceLocation(ModInfo.MODID + ":" + item.getUnlocalizedName().substring(15), "inventory"));
             }
         }
         else
         {
-            ModelLoader.setCustomModelResourceLocation(item, 0, new ModelResourceLocation(ModInfo.MODID + ":" + item.getUnlocalizedName(new ItemStack(item)), "inventory"));
+            ModelLoader.setCustomModelResourceLocation(item, 0, new ModelResourceLocation(ModInfo.MODID + ":" + item.getUnlocalizedName().substring(15), "inventory"));
         }
     }
 
