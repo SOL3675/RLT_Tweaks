@@ -4,6 +4,7 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.common.ModMetadata;
 import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
@@ -15,6 +16,9 @@ import sol3675.rlttweaks.references.ModInfo;
 @Mod(modid = ModInfo.MODID, name = ModInfo.MODNAME, version = ModInfo.VERSION)
 public class RLTTweaks
 {
+    @Mod.Metadata(ModInfo.MODID)
+    public static ModMetadata meta;
+
     @Mod.Instance(ModInfo.MODID)
     public static RLTTweaks instance = new RLTTweaks();
 
@@ -35,13 +39,13 @@ public class RLTTweaks
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent event)
     {
-
+        ModInfo.loadInfo(meta);
     }
 
     @Mod.EventHandler
     public void init(FMLInitializationEvent event)
     {
-
+        proxy.init();
     }
 
     @Mod.EventHandler
