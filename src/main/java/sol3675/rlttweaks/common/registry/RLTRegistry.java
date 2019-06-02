@@ -69,7 +69,7 @@ public class RLTRegistry
     {
         for(Block block : registerdBlock)
         {
-            ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0, new ModelResourceLocation(ModInfo.MODID + ":" + block.getUnlocalizedName().substring(5), "inventory"));
+            ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0, new ModelResourceLocation(ModInfo.MODID + ":" + block.getUnlocalizedName().substring(15), "inventory"));
         }
 
         for(Item item : registerdItem)

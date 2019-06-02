@@ -14,6 +14,7 @@ public class FluidBase extends Fluid
         this.setViscosity(viscosity);
         this.setLuminosity(luminosity);
         this.setTemperature(temperature);
+        FluidRegistry.registerFluid(this);
         FluidRegistry.addBucketForFluid(this);
     }
 }

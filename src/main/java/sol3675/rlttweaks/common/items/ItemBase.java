@@ -41,7 +41,7 @@ public class ItemBase extends Item
         if(getSubNames() != null)
         {
             String subName = stack.getItemDamage()<getSubNames().length ? getSubNames()[stack.getItemDamage()] : "";
-            return this.getUnlocalizedName() + "." + subName;
+            return this.getUnlocalizedName() + "_" + subName;
         }
         return this.getUnlocalizedName();
     }
@@ -75,12 +75,12 @@ public class ItemBase extends Item
         {
             for(int i = 0; i < item.getSubNames().length; ++i)
             {
-                ModelLoader.setCustomModelResourceLocation(item, i, new ModelResourceLocation(ModInfo.MODID + ":" + item.getUnlocalizedName().substring(5), "inventory"));
+                ModelLoader.setCustomModelResourceLocation(item, i, new ModelResourceLocation(ModInfo.MODID + ":" + item.getUnlocalizedName().substring(15), "inventory"));
             }
         }
         else
         {
-            ModelLoader.setCustomModelResourceLocation(item, 0, new ModelResourceLocation(ModInfo.MODID + ":" + item.getUnlocalizedName().substring(5), "inventory"));
+            ModelLoader.setCustomModelResourceLocation(item, 0, new ModelResourceLocation(ModInfo.MODID + ":" + item.getUnlocalizedName().substring(15), "inventory"));
         }
     }
 
