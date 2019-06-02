@@ -21,7 +21,7 @@ public class ItemBase extends Item
 
     public ItemBase(String name, int stackSize, String... subNames)
     {
-        this.setUnlocalizedName(ModInfo.MODID + "." + name);
+        this.setUnlocalizedName(name);
         this.setHasSubtypes(subNames != null && subNames.length > 0);
         this.setCreativeTab(RLTTweaks.creativeTabs);
         this.setMaxStackSize(stackSize);
@@ -75,12 +75,12 @@ public class ItemBase extends Item
         {
             for(int i = 0; i < item.getSubNames().length; ++i)
             {
-                ModelLoader.setCustomModelResourceLocation(item, i, new ModelResourceLocation(ModInfo.MODID + ":" + item.getUnlocalizedName().substring(15), "inventory"));
+                ModelLoader.setCustomModelResourceLocation(item, i, new ModelResourceLocation(ModInfo.MODID + ":" + item.getUnlocalizedName().substring(5), "inventory"));
             }
         }
         else
         {
-            ModelLoader.setCustomModelResourceLocation(item, 0, new ModelResourceLocation(ModInfo.MODID + ":" + item.getUnlocalizedName().substring(15), "inventory"));
+            ModelLoader.setCustomModelResourceLocation(item, 0, new ModelResourceLocation(ModInfo.MODID + ":" + item.getUnlocalizedName().substring(5), "inventory"));
         }
     }
 
