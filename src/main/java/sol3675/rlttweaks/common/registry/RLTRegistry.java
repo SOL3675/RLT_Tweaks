@@ -72,18 +72,14 @@ public class RLTRegistry
     @SubscribeEvent
     public void registerModels(ModelRegistryEvent event)
     {
-        ModelLoader.setCustomMeshDefinition(Item.getItemFromBlock(blockFluidPlasma), new ItemMeshDefinition() {
-            @Override
-            public ModelResourceLocation getModelLocation(ItemStack stack) {
-                return new ModelResourceLocation(ModInfo.MODID + ":fuel_plasma", "fluid");
-            }
-        });
-        ModelLoader.setCustomStateMapper(blockFluidPlasma, new StateMapperBase() {
-            @Override
-            protected ModelResourceLocation getModelResourceLocation(IBlockState state) {
-                return new ModelResourceLocation(ModInfo.MODID + ":fuel_plasma", "fluid");
-            }
-        });
+        ModelLoader.setCustomStateMapper(blockFluidPlasma, new StateMapperBase()
+		{
+			@Override
+			protected ModelResourceLocation getModelResourceLocation(IBlockState state)
+			{
+				return new ModelResourceLocation(blockFluidPlasma.getRegistryName().toString());
+			}
+		});
 
         for(Item item : registerdItem)
         {
