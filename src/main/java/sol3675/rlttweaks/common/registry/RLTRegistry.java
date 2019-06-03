@@ -73,13 +73,13 @@ public class RLTRegistry
     public void registerModels(ModelRegistryEvent event)
     {
         ModelLoader.setCustomStateMapper(blockFluidPlasma, new StateMapperBase()
+	{
+		@Override
+		protected ModelResourceLocation getModelResourceLocation(IBlockState state)
 		{
-			@Override
-			protected ModelResourceLocation getModelResourceLocation(IBlockState state)
-			{
-				return new ModelResourceLocation(blockFluidPlasma.getRegistryName().toString());
-			}
-		});
+			return new ModelResourceLocation(blockFluidPlasma.getRegistryName().toString());
+		}
+	});
 
         for(Item item : registerdItem)
         {
