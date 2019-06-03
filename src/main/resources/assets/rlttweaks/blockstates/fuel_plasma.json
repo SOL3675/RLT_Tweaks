@@ -1,11 +1,10 @@
 {
   "forge_marker": 1,
   "defaults": {
-    "model": "forge:fluid",
-    "transform": "forge:default-item"
+    "model": "forge:fluid"
   },
   "variants": {
-    "fluid": [{
+    "normal": [{
       "custom": {"fluid":  "fuel_plasma"}
     }]
   }
