@@ -70,12 +70,11 @@ public class ItemBase extends Item
     @SideOnly(Side.CLIENT)
     public static void registerItemRender(ItemBase item)
     {
-        if(item == null || item == Items.AIR)return;
         if(item.getSubNames() != null)
         {
             for(int i = 0; i < item.getSubNames().length; ++i)
             {
-                ModelLoader.setCustomModelResourceLocation(item, i, new ModelResourceLocation(ModInfo.MODID + ":" + item.getUnlocalizedName().substring(5), "inventory"));
+                ModelLoader.setCustomModelResourceLocation(item, i, new ModelResourceLocation(ModInfo.MODID + ":" + item.getUnlocalizedName().substring(5) + "_" + item.getSubNames()[i], "inventory"));
             }
         }
         else
