@@ -54,8 +54,7 @@ public class RLTRegistry
     @SubscribeEvent
     public static void registerBlocks(RegistryEvent.Register<Block> event)
     {
-        FluidRegistry.addBucketForFluid(fluidFuelPlasma);
-        blockFluidPlasma = new BlockFluidBase("fuel_plasma",fluidFuelPlasma, Material.WATER);
+        blockFluidPlasma = new BlockFluidBase("fuel_plasma", fluidFuelPlasma, Material.WATER);
         event.getRegistry().register(blockFluidPlasma.setRegistryName(new ResourceLocation(ModInfo.MODID, blockFluidPlasma.getUnlocalizedName().substring(5))));
     }
 
