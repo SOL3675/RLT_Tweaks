@@ -2,22 +2,11 @@ package sol3675.rlttweaks.common.registry;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
-import net.minecraft.block.state.IBlockState;
-import net.minecraft.client.renderer.ItemMeshDefinition;
-import net.minecraft.client.renderer.block.model.ModelResourceLocation;
-import net.minecraft.client.renderer.block.statemap.StateMapperBase;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
-import net.minecraftforge.client.event.ModelRegistryEvent;
-import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fluids.Fluid;
-import net.minecraftforge.fluids.FluidRegistry;
-import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
-import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.fml.relauncher.SideOnly;
 import sol3675.rlttweaks.common.fluids.BlockFluidBase;
 import sol3675.rlttweaks.common.items.ItemBase;
 import sol3675.rlttweaks.references.ModInfo;
@@ -25,7 +14,6 @@ import sol3675.rlttweaks.references.Reference;
 
 import java.util.ArrayList;
 
-@Mod.EventBusSubscriber
 public class RLTRegistry
 {
     public static ArrayList<ItemBase> registerdItem = new ArrayList<ItemBase>();
@@ -38,9 +26,12 @@ public class RLTRegistry
 
     public static Fluid fluidFuelPlasma;
 
+    public static final ResourceLocation FUEL_PLASMA_STILL = new ResourceLocation(ModInfo.MODID, "blocks/fluid/fuel_plasma_still");
+    public static final ResourceLocation FUEL_PLASMA_FLOW = new ResourceLocation(ModInfo.MODID, "blocks/fluid/fuel_plasma_flow");
+
     static
     {
-        fluidFuelPlasma = new Fluid("fuel_plasma", new ResourceLocation(ModInfo.MODID + "blocks/fluid/fuel_plasma_still"), new ResourceLocation(ModInfo.MODID + "blocks/fluid/fuel_plasma_flow"))
+        fluidFuelPlasma = new Fluid("fuel_plasma", FUEL_PLASMA_STILL, FUEL_PLASMA_FLOW)
         .setDensity(3000).setViscosity(10).setLuminosity(15).setTemperature(10000);
 
         canisterEmpty = new ItemBase("canister_empty", 64, "clay");
@@ -49,38 +40,42 @@ public class RLTRegistry
     }
 
     @SubscribeEvent
-    public static void registerBlocks(RegistryEvent.Register<Block> event)
+    public void registerBlocks(RegistryEvent.Register<Block> event)
     {
-        FluidRegistry.addBucketForFluid(fluidFuelPlasma);
+        System.out.println("Start register RLTTweaks Blocks");
         blockFluidPlasma = new BlockFluidBase("fuel_plasma", fluidFuelPlasma, Material.WATER);
-        event.getRegistry().register(blockFluidPlasma.setRegistryName(new ResourceLocation(ModInfo.MODID, blockFluidPlasma.getUnlocalizedName().substring(5))));
+        blockFluidPlasma.setRegistryName(blockFluidPlasma.getUnlocalizedName().substring(5));
+        event.getRegistry().register(blockFluidPlasma);
     }
 
     @SubscribeEvent
-    public static void registerItems(RegistryEvent.Register<Item> event)
+    public void registerItems(RegistryEvent.Register<Item> event)
     {
+        System.out.println("Start register RLTTweaks Items");
         for(ItemBase item : registerdItem)
         {
             event.getRegistry().register(item.setRegistryName(new ResourceLocation(ModInfo.MODID, item.getUnlocalizedName().substring(5))));
         }
     }
-
+/*
     @SideOnly(Side.CLIENT)
     @SubscribeEvent
     public void registerModels(ModelRegistryEvent event)
     {
+        System.out.println("Start register RLTTweaks Models");
         ModelLoader.setCustomStateMapper(blockFluidPlasma, new StateMapperBase()
-	{
-		@Override
-		protected ModelResourceLocation getModelResourceLocation(IBlockState state)
-		{
-			return new ModelResourceLocation(blockFluidPlasma.getRegistryName().toString());
-		}
-	});
+	    {
+		    @Override
+		    protected ModelResourceLocation getModelResourceLocation(IBlockState state)
+		    {
+			    return new ModelResourceLocation(blockFluidPlasma.getRegistryName().toString());
+		    }
+	    });
 
         for(Item item : registerdItem)
         {
             ItemBase.registerItemRender((ItemBase) item);
         }
     }
+*/
 }
