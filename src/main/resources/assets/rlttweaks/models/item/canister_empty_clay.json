@@ -1,5 +1,5 @@
 {
-  "parent": "item/generated",
+  "parent": "rlttweaks:item/canister_empty",
   "textures": {
     "layer0": "rlttweaks:items/canister_empty_clay"
   }

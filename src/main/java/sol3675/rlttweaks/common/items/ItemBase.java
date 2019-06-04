@@ -2,11 +2,9 @@ package sol3675.rlttweaks.common.items;
 
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.NonNullList;
-import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
@@ -40,8 +38,7 @@ public class ItemBase extends Item
     {
         if(getSubNames() != null)
         {
-            String subName = stack.getItemDamage()<getSubNames().length ? getSubNames()[stack.getItemDamage()] : "";
-            return this.getUnlocalizedName() + "_" + subName;
+            return this.getUnlocalizedName() + "_" + this.getSubNames()[stack.getMetadata()];
         }
         return this.getUnlocalizedName();
     }

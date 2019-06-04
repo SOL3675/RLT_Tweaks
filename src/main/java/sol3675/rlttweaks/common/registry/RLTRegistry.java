@@ -5,7 +5,6 @@ import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.ItemMeshDefinition;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
-import net.minecraft.client.renderer.block.statemap.StateMap;
 import net.minecraft.client.renderer.block.statemap.StateMapperBase;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -26,12 +25,10 @@ import sol3675.rlttweaks.references.Reference;
 
 import java.util.ArrayList;
 
-import static net.minecraftforge.fluids.BlockFluidBase.LEVEL;
-
 @Mod.EventBusSubscriber
 public class RLTRegistry
 {
-    public static ArrayList<Item> registerdItem = new ArrayList<Item>();
+    public static ArrayList<ItemBase> registerdItem = new ArrayList<ItemBase>();
 
     public static Block blockFluidPlasma;
 
@@ -62,7 +59,7 @@ public class RLTRegistry
     @SubscribeEvent
     public static void registerItems(RegistryEvent.Register<Item> event)
     {
-        for(Item item : registerdItem)
+        for(ItemBase item : registerdItem)
         {
             event.getRegistry().register(item.setRegistryName(new ResourceLocation(ModInfo.MODID, item.getUnlocalizedName().substring(5))));
         }
