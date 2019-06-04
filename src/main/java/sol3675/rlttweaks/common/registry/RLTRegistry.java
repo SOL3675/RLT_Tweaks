@@ -51,8 +51,7 @@ public class RLTRegistry
     @SubscribeEvent
     public static void registerBlocks(RegistryEvent.Register<Block> event)
     {
-        FluidRegistry.addBucketForFluid(fluidFuelPlasma);
-        blockFluidPlasma = new BlockFluidBase("fuel_plasma",fluidFuelPlasma, Material.WATER);
+        blockFluidPlasma = new BlockFluidBase("fuel_plasma", fluidFuelPlasma, Material.WATER);
         event.getRegistry().register(blockFluidPlasma.setRegistryName(new ResourceLocation(ModInfo.MODID, blockFluidPlasma.getUnlocalizedName().substring(5))));
     }
 
@@ -69,18 +68,14 @@ public class RLTRegistry
     @SubscribeEvent
     public void registerModels(ModelRegistryEvent event)
     {
-        ModelLoader.setCustomMeshDefinition(Item.getItemFromBlock(blockFluidPlasma), new ItemMeshDefinition() {
-            @Override
-            public ModelResourceLocation getModelLocation(ItemStack stack) {
-                return new ModelResourceLocation(ModInfo.MODID + ":fuel_plasma", "fluid");
-            }
-        });
-        ModelLoader.setCustomStateMapper(blockFluidPlasma, new StateMapperBase() {
-            @Override
-            protected ModelResourceLocation getModelResourceLocation(IBlockState state) {
-                return new ModelResourceLocation(ModInfo.MODID + ":fuel_plasma", "fluid");
-            }
-        });
+        ModelLoader.setCustomStateMapper(blockFluidPlasma, new StateMapperBase()
+	{
+		@Override
+		protected ModelResourceLocation getModelResourceLocation(IBlockState state)
+		{
+			return new ModelResourceLocation(blockFluidPlasma.getRegistryName().toString());
+		}
+	});
 
         for(Item item : registerdItem)
         {
