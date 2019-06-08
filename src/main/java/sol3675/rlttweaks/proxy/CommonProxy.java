@@ -7,11 +7,13 @@ import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import slimeknights.tconstruct.library.TinkerRegistry;
 import sol3675.rlttweaks.common.registry.RLTRegistry;
+import sol3675.rlttweaks.config.Config;
 
 public class CommonProxy
 {
     public void preInit(FMLPreInitializationEvent event)
     {
+        Config.lordConfig();
         FluidRegistry.addBucketForFluid(RLTRegistry.fluidFuelPlasma);
     }
 

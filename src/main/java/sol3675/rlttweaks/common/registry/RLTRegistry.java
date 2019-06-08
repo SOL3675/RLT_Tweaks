@@ -9,6 +9,7 @@ import net.minecraftforge.fluids.Fluid;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import sol3675.rlttweaks.common.fluids.BlockFluidBase;
 import sol3675.rlttweaks.common.items.ItemBase;
+import sol3675.rlttweaks.common.items.ItemResearchData;
 import sol3675.rlttweaks.references.ModInfo;
 import sol3675.rlttweaks.references.Reference;
 
@@ -20,6 +21,7 @@ public class RLTRegistry
 
     public static Block blockFluidPlasma;
 
+    public static ItemBase dataResearch;
     public static ItemBase canisterEmpty;
     public static ItemBase canisterFilled;
     public static ItemBase canisterMolten;
@@ -34,6 +36,7 @@ public class RLTRegistry
         fluidFuelPlasma = new Fluid("fuel_plasma", FUEL_PLASMA_STILL, FUEL_PLASMA_FLOW)
         .setDensity(3000).setViscosity(10).setLuminosity(15).setTemperature(10000);
 
+        dataResearch = new ItemResearchData();
         canisterEmpty = new ItemBase("canister_empty", 64, "clay");
         canisterFilled = new ItemBase("canister_filled", 64, Reference.lowTiersMetal);
         canisterMolten = new ItemBase("canister_molten", 64, Reference.lowTiersMetal);
