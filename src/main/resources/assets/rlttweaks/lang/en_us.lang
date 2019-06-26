@@ -21,3 +21,9 @@ item.canister_molten_tin.name=Molten Tin Filled Canister
 item.canister_molten_zinc.name=Molten Zinc Filled Canister
 item.canister_molten_bronze.name=Molten Bronze Filled Canister
 item.canister_molten_brass.name=Molten Brass Filled Canister
+
+item.cast_ingot.name=Simple Ingot Cast
+item.cast_plate.name=Simple Plate Cast
+
+item.cast_filled_ingot.name=Filled Ingot Cast
+item.cast_filled_plate.name=Filled Plate Cast
