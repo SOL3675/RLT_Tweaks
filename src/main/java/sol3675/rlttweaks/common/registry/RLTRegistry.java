@@ -3,6 +3,7 @@ package sol3675.rlttweaks.common.registry;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.item.Item;
+import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fluids.Fluid;
@@ -11,6 +12,7 @@ import sol3675.rlttweaks.common.fluids.BlockFluidBase;
 import sol3675.rlttweaks.common.items.ItemBase;
 import sol3675.rlttweaks.common.items.ItemCastFilled;
 import sol3675.rlttweaks.common.items.ItemResearchData;
+import sol3675.rlttweaks.common.recipes.GeneralRecipe;
 import sol3675.rlttweaks.references.ModInfo;
 import sol3675.rlttweaks.references.Reference;
 
@@ -64,6 +66,12 @@ public class RLTRegistry
         {
             event.getRegistry().register(item.setRegistryName(new ResourceLocation(ModInfo.MODID, item.getUnlocalizedName().substring(5))));
         }
+    }
+
+    @SubscribeEvent
+    public void registerRecipes(RegistryEvent.Register<IRecipe> event)
+    {
+        GeneralRecipe.addGeneralRecipes();
     }
 /*
     @SideOnly(Side.CLIENT)
