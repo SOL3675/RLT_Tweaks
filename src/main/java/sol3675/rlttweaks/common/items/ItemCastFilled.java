@@ -53,7 +53,7 @@ public class ItemCastFilled extends ItemBase
             Short duration = stack.getTagCompound().getShort(TAGDURATION);
             if(material != null)
             {
-                String toolTipMaterial = ChatFormatting.BOLD + I18n.format("Material:") + ChatFormatting.RESET + ChatFormatting.YELLOW + I18n.format(material);
+                String toolTipMaterial = ChatFormatting.BOLD + I18n.format("castfilled.tooltip.1") + ChatFormatting.RESET + ChatFormatting.YELLOW + I18n.format(material);
                 list.add(toolTipMaterial);
             }
             if(duration != null)
@@ -61,11 +61,11 @@ public class ItemCastFilled extends ItemBase
                 String toolTipDuration;
                 if(duration != 0)
                 {
-                    toolTipDuration = ChatFormatting.BOLD + I18n.format("Can Craft after ") + ChatFormatting.RESET + ChatFormatting.ITALIC + duration.toString() + I18n.format(" seconds");
+                    toolTipDuration = ChatFormatting.BOLD + I18n.format("castfilled.tooltip.2") + ChatFormatting.RESET + ChatFormatting.ITALIC + duration.toString() + I18n.format("castfilled.tooltip.3");
                 }
                 else
                 {
-                    toolTipDuration = ChatFormatting.BOLD + I18n.format("Craftable");
+                    toolTipDuration = ChatFormatting.BOLD + I18n.format("castfilled.tooltip.4");
                 }
 
                 list.add(toolTipDuration);

@@ -3,11 +3,13 @@ package sol3675.rlttweaks.common.registry;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemBlock;
 import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fluids.Fluid;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import sol3675.rlttweaks.common.blocks.simpleblocks.AethiumAlloy;
 import sol3675.rlttweaks.common.fluids.BlockFluidBase;
 import sol3675.rlttweaks.common.items.ItemBase;
 import sol3675.rlttweaks.common.items.ItemCastFilled;
@@ -20,7 +22,11 @@ import java.util.ArrayList;
 
 public class RLTRegistry
 {
-    public static ArrayList<Item> registerdItem = new ArrayList<Item>();
+    public static ArrayList<Block> registeredBlock = new ArrayList<Block>();
+    public static ArrayList<Item> registeredItem = new ArrayList<Item>();
+
+    public static Block aethiumAlloy;
+    public static Item itemAethiumAlloy;
 
     public static Block blockFluidPlasma;
 
@@ -41,6 +47,9 @@ public class RLTRegistry
         fluidFuelPlasma = new Fluid("fuel_plasma", FUEL_PLASMA_STILL, FUEL_PLASMA_FLOW)
         .setDensity(3000).setViscosity(10).setLuminosity(15).setTemperature(10000);
 
+        aethiumAlloy = new AethiumAlloy();
+        itemAethiumAlloy = new ItemBlock(aethiumAlloy).setRegistryName("aethium_alloy");
+
         dataResearch = new ItemResearchData();
         canisterEmpty = new ItemBase("canister_empty", 64, "clay");
         canisterFilled = new ItemBase("canister_filled", 64, Reference.lowTiersMetal);
@@ -56,13 +65,15 @@ public class RLTRegistry
         blockFluidPlasma = new BlockFluidBase("fuel_plasma", fluidFuelPlasma, Material.WATER);
         blockFluidPlasma.setRegistryName(blockFluidPlasma.getUnlocalizedName().substring(5));
         event.getRegistry().register(blockFluidPlasma);
+        event.getRegistry().register(aethiumAlloy);
     }
 
     @SubscribeEvent
     public void registerItems(RegistryEvent.Register<Item> event)
     {
         System.out.println("Start register RLTTweaks Items");
-        for(Item item : registerdItem)
+        event.getRegistry().register(itemAethiumAlloy);
+        for(Item item : registeredItem)
         {
             event.getRegistry().register(item.setRegistryName(new ResourceLocation(ModInfo.MODID, item.getUnlocalizedName().substring(5))));
         }

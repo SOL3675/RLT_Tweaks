@@ -1,5 +1,6 @@
 package sol3675.rlttweaks;
 
+import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.client.renderer.block.statemap.StateMapperBase;
@@ -18,6 +19,7 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import sol3675.rlttweaks.common.blocks.BlockBase;
 import sol3675.rlttweaks.common.items.ItemBase;
 import sol3675.rlttweaks.common.registry.RLTRegistry;
 import sol3675.rlttweaks.proxy.CommonProxy;
@@ -81,7 +83,9 @@ public class RLTTweaks
             }
         });
 
-        for(Item item : RLTRegistry.registerdItem)
+        ModelLoader.setCustomModelResourceLocation(RLTRegistry.itemAethiumAlloy, 0, new ModelResourceLocation(RLTRegistry.aethiumAlloy.getRegistryName().toString()));
+
+        for(Item item : RLTRegistry.registeredItem)
         {
             ItemBase.registerItemRender((ItemBase) item);
         }

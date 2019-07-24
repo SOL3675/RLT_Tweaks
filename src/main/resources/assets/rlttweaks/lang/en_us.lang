@@ -4,9 +4,13 @@ itemGroup.rlttweaks=RLT Tweaks
 item.researchData_scan.name=Research Data SCAN
 item.researchData_composition.name=Research Data COMPOSITION
 item.researchData_dna.name=Research Data DNA
+research.tooltip=Research:
 
 #Fluids
 fluid.fuel_plasma=Plasma Fuel
+
+#Basic Blocks
+tile.aethium_alloy.name=Aethium Alloy Shelter Block
 
 #Basic Items
 item.canister_empty_clay.name=Clay Empty Canister
@@ -27,3 +31,9 @@ item.cast_plate.name=Simple Plate Cast
 
 item.cast_filled_ingot.name=Filled Ingot Cast
 item.cast_filled_plate.name=Filled Plate Cast
+
+#Tooltips
+castfilled.tooltip.1=Material:
+castfilled.tooltip.2=Can Craft after
+castfilled.tooltip.3= seconds
+castfilled.tooltip.4=Craftable

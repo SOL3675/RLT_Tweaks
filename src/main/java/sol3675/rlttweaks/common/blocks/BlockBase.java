@@ -5,7 +5,6 @@ import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.NonNullList;
 import net.minecraft.util.math.BlockPos;
@@ -14,6 +13,7 @@ import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import sol3675.rlttweaks.RLTTweaks;
+import sol3675.rlttweaks.common.registry.RLTRegistry;
 import sol3675.rlttweaks.references.ModInfo;
 
 public class BlockBase extends Block
@@ -26,8 +26,8 @@ public class BlockBase extends Block
         super(material);
         this.name = name;
         this.setUnlocalizedName(name);
-        this.setRegistryName(ModInfo.MODID, name);
         this.setCreativeTab(RLTTweaks.creativeTabs);
+        RLTRegistry.registeredBlock.add(this);
     }
 
     public String[] getSubNames()
@@ -52,12 +52,12 @@ public class BlockBase extends Block
         {
             for (int i = 0; i < block.getSubNames().length; ++i)
             {
-                ModelLoader.setCustomModelResourceLocation((ItemBlockBase)Item.getItemFromBlock(block), i, new ModelResourceLocation(ModInfo.MODID + ":" + block.getUnlocalizedName().substring(5) + "_" + block.getSubNames()[i], "inventory"));
+                ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), i, new ModelResourceLocation(ModInfo.MODID + ":" + block.getUnlocalizedName().substring(5) + "_" + block.getSubNames()[i], "inventory"));
             }
         }
         else
         {
-            ModelLoader.setCustomModelResourceLocation((ItemBlockBase)Item.getItemFromBlock(block), 0, new ModelResourceLocation(ModInfo.MODID + ":" + block.getUnlocalizedName().substring(5), "inventory"));
+            ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0, new ModelResourceLocation(ModInfo.MODID + ":" + block.getUnlocalizedName().substring(5), "inventory"));
         }
     }
 }

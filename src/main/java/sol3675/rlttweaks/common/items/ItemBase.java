@@ -25,7 +25,7 @@ public class ItemBase extends Item
         this.setMaxStackSize(stackSize);
         this.name = name;
         this.subNames = subNames;
-        RLTRegistry.registerdItem.add(this);
+        RLTRegistry.registeredItem.add(this);
     }
 
     public String[] getSubNames()

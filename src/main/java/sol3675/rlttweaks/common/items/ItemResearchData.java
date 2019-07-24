@@ -31,7 +31,7 @@ public class ItemResearchData extends ItemBase
             String key = stack.getTagCompound().getString("research");
             if(key != null)
             {
-                String toolTip = ChatFormatting.BOLD + I18n.format("Research:") + ChatFormatting.RESET + ChatFormatting.RED + I18n.format(key);
+                String toolTip = ChatFormatting.BOLD + I18n.format("research.tooltip") + ChatFormatting.RESET + ChatFormatting.RED + I18n.format(key);
                 list.add(toolTip);
             }
         }

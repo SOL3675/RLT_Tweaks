@@ -1,17 +1,17 @@
 package sol3675.rlttweaks.common.blocks;
 
-import net.minecraft.block.Block;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.NonNullList;
+import sol3675.rlttweaks.common.registry.RLTRegistry;
 
 public class ItemBlockBase extends ItemBlock
 {
-    public ItemBlockBase(Block block)
+    public ItemBlockBase(BlockBase block)
     {
         super(block);
-        if(((BlockBase)block).subNames.length > 1)
+        if(block.getUnlocalizedName() != null)
         {
             setHasSubtypes(true);
         }

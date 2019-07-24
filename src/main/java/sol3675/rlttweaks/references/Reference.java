@@ -6,4 +6,9 @@ public class Reference
     {
         "copper","tin", "zinc", "bronze", "brass"
     };
+
+    public static String[] blockMisc0 =
+     {
+         "aethium_alloy", "aethium_alloy_glass"
+     };
 }
