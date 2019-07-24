@@ -6,12 +6,14 @@ import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.NonNullList;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import sol3675.rlttweaks.common.registry.RLTRegistry;
 
 import javax.annotation.Nullable;
 import java.util.List;
@@ -26,6 +28,7 @@ public class ItemCastFilled extends ItemBase
     public ItemCastFilled()
     {
         super("cast_filled", 1, "ingot", "plate");
+        this.setContainerItem(RLTRegistry.cast);
     }
 
     @Override
@@ -41,6 +44,18 @@ public class ItemCastFilled extends ItemBase
             }
         }
         super.onUpdate(stack, worldIn, entityIn, itemSlot, isSelected);
+    }
+
+    @Override
+    public ItemStack getContainerItem(ItemStack itemStack) {
+        if(itemStack.getMetadata() == 0)
+        {
+            return new ItemStack(RLTRegistry.cast, 1, 0);
+        }
+        else
+        {
+            return new ItemStack(RLTRegistry.cast, 1, 1);
+        }
     }
 
     @Override

@@ -19,7 +19,6 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-import sol3675.rlttweaks.common.blocks.BlockBase;
 import sol3675.rlttweaks.common.items.ItemBase;
 import sol3675.rlttweaks.common.registry.RLTRegistry;
 import sol3675.rlttweaks.proxy.CommonProxy;
