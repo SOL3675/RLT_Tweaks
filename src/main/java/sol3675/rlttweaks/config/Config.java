@@ -1,8 +1,8 @@
-package sol3675.rlttweaks.config;
+package main.java.sol3675.rlttweaks.config;
 
 import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.fml.common.Loader;
-import sol3675.rlttweaks.references.ModInfo;
+import main.java.sol3675.rlttweaks.references.ModInfo;
 
 import java.io.File;
 

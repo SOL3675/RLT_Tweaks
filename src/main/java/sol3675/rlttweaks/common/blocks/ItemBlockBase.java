@@ -1,10 +1,10 @@
-package sol3675.rlttweaks.common.blocks;
+package main.java.sol3675.rlttweaks.common.blocks;
 
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.NonNullList;
-import sol3675.rlttweaks.common.registry.RLTRegistry;
+import main.java.sol3675.rlttweaks.common.registry.RLTRegistry;
 
 public class ItemBlockBase extends ItemBlock
 {

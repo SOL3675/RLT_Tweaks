@@ -1,4 +1,4 @@
-package sol3675.rlttweaks.proxy;
+package main.java.sol3675.rlttweaks.proxy;
 
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.FluidStack;
@@ -6,8 +6,8 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import slimeknights.tconstruct.library.TinkerRegistry;
-import sol3675.rlttweaks.common.registry.RLTRegistry;
-import sol3675.rlttweaks.config.Config;
+import main.java.sol3675.rlttweaks.common.registry.RLTRegistry;
+import main.java.sol3675.rlttweaks.config.Config;
 
 public class CommonProxy
 {

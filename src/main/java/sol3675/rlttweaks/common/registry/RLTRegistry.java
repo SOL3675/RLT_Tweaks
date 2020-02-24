@@ -1,4 +1,4 @@
-package sol3675.rlttweaks.common.registry;
+package main.java.sol3675.rlttweaks.common.registry;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
@@ -9,14 +9,14 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fluids.Fluid;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
-import sol3675.rlttweaks.common.blocks.simpleblocks.AethiumAlloy;
-import sol3675.rlttweaks.common.fluids.BlockFluidBase;
-import sol3675.rlttweaks.common.items.ItemBase;
-import sol3675.rlttweaks.common.items.ItemCastFilled;
-import sol3675.rlttweaks.common.items.ItemResearchData;
-import sol3675.rlttweaks.common.recipes.GeneralRecipe;
-import sol3675.rlttweaks.references.ModInfo;
-import sol3675.rlttweaks.references.Reference;
+import main.java.sol3675.rlttweaks.common.blocks.simpleblocks.AethiumAlloy;
+import main.java.sol3675.rlttweaks.common.fluids.BlockFluidBase;
+import main.java.sol3675.rlttweaks.common.items.ItemBase;
+import main.java.sol3675.rlttweaks.common.items.ItemCastFilled;
+import main.java.sol3675.rlttweaks.common.items.ItemResearchData;
+import main.java.sol3675.rlttweaks.common.recipes.GeneralRecipe;
+import main.java.sol3675.rlttweaks.references.ModInfo;
+import main.java.sol3675.rlttweaks.references.Reference;
 
 import java.util.ArrayList;
 

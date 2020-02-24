@@ -1,4 +1,4 @@
-package sol3675.rlttweaks.proxy;
+package main.java.sol3675.rlttweaks.proxy;
 
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;

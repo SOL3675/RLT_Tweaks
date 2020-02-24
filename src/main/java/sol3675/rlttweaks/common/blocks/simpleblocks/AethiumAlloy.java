@@ -1,4 +1,4 @@
-package sol3675.rlttweaks.common.blocks.simpleblocks;
+package main.java.sol3675.rlttweaks.common.blocks.simpleblocks;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
@@ -9,8 +9,8 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.Explosion;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
-import sol3675.rlttweaks.RLTTweaks;
-import sol3675.rlttweaks.references.ModInfo;
+import main.java.sol3675.rlttweaks.RLTTweaks;
+import main.java.sol3675.rlttweaks.references.ModInfo;
 
 public class AethiumAlloy extends Block
 {

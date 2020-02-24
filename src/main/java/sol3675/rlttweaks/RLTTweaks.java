@@ -1,4 +1,4 @@
-package sol3675.rlttweaks;
+package main.java.sol3675.rlttweaks;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
@@ -19,10 +19,10 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-import sol3675.rlttweaks.common.items.ItemBase;
-import sol3675.rlttweaks.common.registry.RLTRegistry;
-import sol3675.rlttweaks.proxy.CommonProxy;
-import sol3675.rlttweaks.references.ModInfo;
+import main.java.sol3675.rlttweaks.common.items.ItemBase;
+import main.java.sol3675.rlttweaks.common.registry.RLTRegistry;
+import main.java.sol3675.rlttweaks.proxy.CommonProxy;
+import main.java.sol3675.rlttweaks.references.ModInfo;
 
 @Mod(modid = ModInfo.MODID, name = ModInfo.MODNAME, version = ModInfo.VERSION)
 public class RLTTweaks

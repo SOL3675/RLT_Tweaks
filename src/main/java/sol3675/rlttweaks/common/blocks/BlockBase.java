@@ -1,4 +1,4 @@
-package sol3675.rlttweaks.common.blocks;
+package main.java.sol3675.rlttweaks.common.blocks;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
@@ -12,9 +12,9 @@ import net.minecraft.world.IBlockAccess;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-import sol3675.rlttweaks.RLTTweaks;
-import sol3675.rlttweaks.common.registry.RLTRegistry;
-import sol3675.rlttweaks.references.ModInfo;
+import main.java.sol3675.rlttweaks.RLTTweaks;
+import main.java.sol3675.rlttweaks.common.registry.RLTRegistry;
+import main.java.sol3675.rlttweaks.references.ModInfo;
 
 public class BlockBase extends Block
 {

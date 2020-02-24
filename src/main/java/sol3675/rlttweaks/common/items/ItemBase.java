@@ -1,4 +1,4 @@
-package sol3675.rlttweaks.common.items;
+package main.java.sol3675.rlttweaks.common.items;
 
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.creativetab.CreativeTabs;
@@ -8,9 +8,9 @@ import net.minecraft.util.NonNullList;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-import sol3675.rlttweaks.RLTTweaks;
-import sol3675.rlttweaks.common.registry.RLTRegistry;
-import sol3675.rlttweaks.references.ModInfo;
+import main.java.sol3675.rlttweaks.RLTTweaks;
+import main.java.sol3675.rlttweaks.common.registry.RLTRegistry;
+import main.java.sol3675.rlttweaks.references.ModInfo;
 
 public class ItemBase extends Item
 {

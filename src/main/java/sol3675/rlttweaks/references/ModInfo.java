@@ -1,4 +1,4 @@
-package sol3675.rlttweaks.references;
+package main.java.sol3675.rlttweaks.references;
 
 import net.minecraftforge.fml.common.ModMetadata;
 

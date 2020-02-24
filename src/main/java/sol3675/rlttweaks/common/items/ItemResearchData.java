@@ -1,4 +1,4 @@
-package sol3675.rlttweaks.common.items;
+package main.java.sol3675.rlttweaks.common.items;
 
 import com.mojang.realmsclient.gui.ChatFormatting;
 import net.minecraft.client.resources.I18n;
@@ -10,7 +10,7 @@ import net.minecraft.util.NonNullList;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-import sol3675.rlttweaks.config.Config;
+import main.java.sol3675.rlttweaks.config.Config;
 
 import javax.annotation.Nullable;
 import java.util.List;

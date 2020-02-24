@@ -1,7 +1,7 @@
-package sol3675.rlttweaks.common.blocks;
+package main.java.sol3675.rlttweaks.common.blocks;
 
 import net.minecraft.block.material.Material;
-import sol3675.rlttweaks.references.Reference;
+import main.java.sol3675.rlttweaks.references.Reference;
 
 public class BlockMisc0 extends BlockBase
 {
